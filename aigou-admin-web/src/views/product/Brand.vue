@@ -138,9 +138,6 @@
                             :clearable="true">
                     </el-cascader>
                 </div>
-
-                <el-form-item></el-form-item>
-
                 <el-form-item label="描述">
                     <el-input type="textarea" v-model="addForm.description"></el-input>
                 </el-form-item>
@@ -396,10 +393,7 @@
                             for(var i = 0;i<this.productOptions.length ; i++){
                                 b = this.productOptions[i];
                             }
-                            console.debug(b)
                             para.productTypeId = b;
-                            console.debug("----------------------")
-                            console.debug(para.productTypeId);
                             this.$http.post("/product/brand/add",para).then(
                                 res=>{
                                     let {success,message,restObj} = res.data;
@@ -441,7 +435,6 @@
                                 var b = this.addForm.productTypeId[i];
                             }
                             para.productTypeId = b;
-                            console.debug(para);
                             this.$http.post("/product/brand/add",para).then(
                                 res=>{
                                     let {success,message,restObj} = res.data;
