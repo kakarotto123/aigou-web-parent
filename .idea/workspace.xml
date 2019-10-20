@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aafa63d0-f61c-4415-925c-ae43645c21bf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/aigou-admin-web/src/views/product/p.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aigou-admin-web/src/views/product/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-admin-web/src/views/product/Product.vue" afterDir="false" />
     </list>
@@ -100,6 +99,9 @@
       <workItem from="1571359784097" duration="2501000" />
       <workItem from="1571378027577" duration="9659000" />
       <workItem from="1571462312612" duration="12623000" />
+      <workItem from="1571532409281" duration="162000" />
+      <workItem from="1571536976281" duration="61000" />
+      <workItem from="1571559464751" duration="5144000" />
     </task>
     <task id="LOCAL-00001" summary="提交商品模块的前端代码">
       <created>1571321371960</created>
@@ -108,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571321371960</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="提交商品维护的前端代码">
+      <created>1571532535913</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571532535913</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +139,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="提交商品模块的前端代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交商品模块的前端代码" />
+    <MESSAGE value="提交商品维护的前端代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交商品维护的前端代码" />
   </component>
 </project>

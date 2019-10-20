@@ -220,15 +220,24 @@
 			</el-card>
 
 			<el-table :data="skus" highlight-current-row style="width: 100%;">
-				<el-table-column v-for="(value,key) in skus[0]" :label="key" :prop="key">
+                <!--SKU属性-->
+				<el-table-column v-if="key!='price' && key!='store' && key!='indexs'" v-for="(value,key) in skus[0]" :label="key" :prop="key">
 				</el-table-column>
-			</el-table>
+                <!--price和store-->
+                 <el-table-column v-if="(key=='price'||key=='store')&&key!='indexs'" v-for=" (value,key) in skus[0]" :label="key" :prop="key">
+                    <template scope="scope">
+                         <el-input v-model="scope.row[key]" auto-complete="false"/>
+                    </template>
+             </el-table-column>
+            </el-table>
 
 			<div slot="footer" class="dialog-footer">
 				<el-button @click.native="skuPropertiesDialogVisible = false">取消</el-button>
 				<el-button type="primary" @click.native="handleSaveSkuProperties">提交</el-button>
 			</div>
 		</el-dialog>
+
+
 	</section>
 </template>
 
@@ -404,6 +413,31 @@
 
 			//sku属性保存
 			handleSaveSkuProperties(){
+                let productId = this.sels[0].id;
+                let param = {};
+                param.skuProperties = this.skuProperties;
+                param.skus = this.skus;
+                this.$confirm("确认保存?",'提示',{
+                    type:'warning'
+                }).then(() =>{
+                    this.$http.post("/product/product/updateSkuProperties?productId=" + productId,param)
+                        .then(res=>{
+                            let {success,message,restObj} = res.data;
+                            if (success){
+                                this.$message({
+                                    message:'保存成功',
+                                    type:'success'
+                                });
+                                this.skuPropertiesDialogVisible = false;
+                            }else {
+                                this.$message({
+                                    message:message,
+                                    type:'error'
+                                });
+                            }
+                        })
+                }).catch(() =>{
+                });
 			},
 
 			//删除sku属性选项
@@ -575,6 +609,7 @@
 				this.editFormVisible = true;
 				this.editForm = Object.assign({}, row);
 				this.loadGetPath(index, row);
+				console.debug(this.editForm);
 				this.fileList=[];
 				if(row.medias){
 					let arr =  row.medias.split(",");
@@ -624,10 +659,9 @@
 					if (valid) {
 						this.$confirm('确认提交吗？', '提示', {}).then(() => {
 							this.editLoading = true;
-							//NProgress.start();
 							let para = Object.assign({}, this.editForm);
 							for(var i = 0;i<this.productOptions.length ; i++){
-								b = this.productOptions[i];
+								var b = this.productOptions[i];
 							}
 							para.productTypeId = b;
 							//原有的数据已经用一个新数组接收了，现在需要把新添加的图片地址用了新的保存了
@@ -644,7 +678,7 @@
 											this.$refs['editForm'].resetFields();
 											this.editFormVisible = false;
 											this.editLoading = false;
-											this.getBrands();
+											this.getProducts();
 										}else{
 											this.$message({
 												message: '编辑失败',
@@ -747,12 +781,21 @@
 							cur.options.forEach((e2,index)=>{
 								let obj = Object.assign({},e1);
 								obj[cur.specName] = e2;
+								//获取上一次的indexs,后面拼接这一次的索引
+                                let lastIndexs = obj.indexs;
+                                console.debug("lastIndexs",lastIndexs)
+                                if(!lastIndexs) lastIndexs = "";
 								//判断是否是最后一次reduce
 								if (currentIndex == skuPropertiesArr.length-1){
 									obj.price = 0;
 									obj.store = 0;
-								}
-								temp.push(obj);
+									lastIndexs = lastIndexs + index;
+								}else {
+                                    lastIndexs = lastIndexs + index + " _";
+                                }
+                                obj.indexs = lastIndexs;
+
+                                temp.push(obj);
 							})
 						})
 						return temp;
@@ -762,7 +805,7 @@
 				deep:true
 			}
 		}
-	}
+    }
 </script>
 
 <style scoped>
