@@ -2,29 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aafa63d0-f61c-4415-925c-ae43645c21bf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/aigou-admin-web/src/views/product/Product.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-sass/lib/binding.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-sass/lib/errors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-sass/lib/extensions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-sass/lib/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-sass/lib/render.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-sass/lib/watcher.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-sass/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-sass/scripts/build.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-sass/scripts/coverage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-sass/scripts/install.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-sass/scripts/prepublish.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-sass/scripts/util/downloadoptions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-sass/scripts/util/proxy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-sass/scripts/util/useragent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-sass/vendor/win32-x64-64/binding.node" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aigou-admin-web/src/views/product/p.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-admin-web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-admin-web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-admin-web/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-admin-web/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-admin-web/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-admin-web/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aigou-admin-web/src/views/product/Brand.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-admin-web/src/views/product/Brand.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aigou-admin-web/src/views/product/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-admin-web/src/views/product/Product.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +96,19 @@
       <workItem from="1571216864723" duration="1545000" />
       <workItem from="1571278671747" duration="370000" />
       <workItem from="1571295514518" duration="18883000" />
+      <workItem from="1571321345427" duration="187000" />
+      <workItem from="1571359784097" duration="2501000" />
+      <workItem from="1571378027577" duration="9659000" />
+      <workItem from="1571462312612" duration="12623000" />
     </task>
+    <task id="LOCAL-00001" summary="提交商品模块的前端代码">
+      <created>1571321371960</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571321371960</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,5 +129,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="提交商品模块的前端代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交商品模块的前端代码" />
   </component>
 </project>
