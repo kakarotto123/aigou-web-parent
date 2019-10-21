@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aafa63d0-f61c-4415-925c-ae43645c21bf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ecommerce/js/vue/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ecommerce/js/vue/vue.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aigou-admin-web/src/views/product/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/aigou-admin-web/src/views/product/Product.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce/list.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,13 +53,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/aigou-admin-web/src/views/product" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ecommerce/js/vue" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEA\aigou-web-parent\ecommerce\js\vue" />
       <recent name="D:\IDEA\aigou-web-parent\aigou-admin-web\src\views\product" />
       <recent name="D:\IDEA\aigou-web-parent\ecommerce\static" />
     </key>
@@ -101,7 +106,9 @@
       <workItem from="1571462312612" duration="12623000" />
       <workItem from="1571532409281" duration="162000" />
       <workItem from="1571536976281" duration="61000" />
-      <workItem from="1571559464751" duration="5144000" />
+      <workItem from="1571559464751" duration="5400000" />
+      <workItem from="1571644946117" duration="627000" />
+      <workItem from="1571646798259" duration="7663000" />
     </task>
     <task id="LOCAL-00001" summary="提交商品模块的前端代码">
       <created>1571321371960</created>
@@ -117,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571532535913</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="提交保存sku属性的前端代码">
+      <created>1571570257203</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1571570257203</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +154,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="提交商品模块的前端代码" />
     <MESSAGE value="提交商品维护的前端代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交商品维护的前端代码" />
+    <MESSAGE value="提交保存sku属性的前端代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交保存sku属性的前端代码" />
   </component>
 </project>

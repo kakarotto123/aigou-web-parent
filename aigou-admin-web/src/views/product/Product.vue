@@ -449,9 +449,59 @@
 			},
 
 			//上架
-			handleOnSale(){},
+			handleOnSale(){
+                var ids = this.sels.map(item => item.id).toString();
+                this.$confirm('确认选中的商品上架吗？', '提示', {
+                    type: 'warning'
+                }).then(() => {
+                    this.listLoading = true;
+                    this.$http.get("/product/product/onSale?ids="+ids)
+                        .then(res=>{
+                            this.listLoading = false;
+                            let {success,message,restObj} = res.data;
+                            if (success){
+                                this.$message({
+                                    message: '上架成功',
+                                    type: 'success'
+                                });
+                                this.getProducts();
+                            }else {
+                                this.$message({
+                                    message: message,
+                                    type: 'error'
+                                });
+                            }
+                        })
+                }).catch(() => {
+                });
+            },
 			//下架
-			handleOffSale(){},
+			handleOffSale(){
+                var ids = this.sels.map(item => item.id).toString();
+                this.$confirm('确认选中的商品下架吗？', '提示', {
+                    type: 'warning'
+                }).then(() => {
+                    this.listLoading = true;
+                    this.$http.get("/product/product/offSale?ids="+ids)
+                        .then(res=>{
+                            this.listLoading = false;
+                            let {success,message,restObj} = res.data;
+                            if (success){
+                                this.$message({
+                                    message: '下架成功',
+                                    type: 'success'
+                                });
+                                this.getProducts();
+                            }else {
+                                this.$message({
+                                    message: message,
+                                    type: 'error'
+                                });
+                            }
+                        })
+                }).catch(() => {
+                });
+            },
 
 			//获取富文本编辑框
 			loadExtdate(index,row){
@@ -801,6 +851,14 @@
 						return temp;
 					},[{}])
 					this.skus = result;
+					//sku属性回填price和store
+					this.$http.get("/product/sku/getPrices/"+this.sels[0].id).then(res=>{
+						let s = res.data;
+						for (let i =0;i<s.length;i++){
+							this.skus[i].price = s[i].price
+							this.skus[i].store = s[i].availableStock
+						}
+					})
 				},
 				deep:true
 			}
