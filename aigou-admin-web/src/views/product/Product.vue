@@ -704,39 +704,46 @@
 			},
 
 			//编辑
-			editSubmit: function () {
+			editSubmit: function (file) {
 				this.$refs.editForm.validate((valid) => {
 					if (valid) {
 						this.$confirm('确认提交吗？', '提示', {}).then(() => {
-							this.editLoading = true;
+							this.addLoading = true;
 							let para = Object.assign({}, this.editForm);
 							for(var i = 0;i<this.productOptions.length ; i++){
 								var b = this.productOptions[i];
 							}
+							//从fileList中获取文件路径用，拼接给medias赋值
+							console.debug(this.fileList);
+							if(file.response != null){
+								para.medias = this.fileList.map(file=>file.url).join(",");
+							}else{
+								para.medias = this.fileList.map(file=>file.response.restObj).join(",");
+							}
+							/*para.medias = this.fileList;*/
 							para.productTypeId = b;
-							//原有的数据已经用一个新数组接收了，现在需要把新添加的图片地址用了新的保存了
-							para.medias = this.imgNewPath.join(",");
 							this.$http.post("/product/product/add",para).then(
 									res=>{
 										let {success,message,restObj} = res.data;
 										if(success){
 											this.addLoading = false;
+											//NProgress.done();
 											this.$message({
-												message: '编辑成功',
+												message: '修改成功',
 												type: 'success'
 											});
 											this.$refs['editForm'].resetFields();
 											this.editFormVisible = false;
-											this.editLoading = false;
 											this.getProducts();
 										}else{
 											this.$message({
-												message: '编辑失败',
+												message: '修改失败',
 												type: 'error'
 											});
 										}
 									}
 							).catch({
+
 							});
 						});
 					}
@@ -749,7 +756,6 @@
 					if (valid) {
 						this.$confirm('确认提交吗？', '提示', {}).then(() => {
 							this.addLoading = true;
-							//NProgress.start();
 							let para = Object.assign({}, this.addForm);
 							for(var i = 0;i<this.addForm.productTypeId.length ; i++){
 								var b = this.addForm.productTypeId[i];
@@ -762,6 +768,7 @@
 										let {success,message,restObj} = res.data;
 										if(success){
 											this.addLoading = false;
+											//NProgress.done();
 											this.$message({
 												message: '添加成功',
 												type: 'success'
@@ -770,6 +777,7 @@
 											this.addFormVisible = false;
 											this.fileList = [];
 											this.getProducts();
+
 										}else{
 											this.$message({
 												message: '添加失败',
@@ -778,6 +786,7 @@
 										}
 									}
 							).catch({
+
 							});
 						});
 					}
